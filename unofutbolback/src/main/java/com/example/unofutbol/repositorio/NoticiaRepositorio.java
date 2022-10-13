@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface NoticiaRepositorio extends Repository<Noticia, Integer> {
   List<Noticia> findAll();
-  Noticia findOne(int id);
 }

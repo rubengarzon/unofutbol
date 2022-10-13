@@ -11,7 +11,7 @@ public class Noticia {
   private int id;
   @Column(name = "titulo")
   private String titulo;
-  @Column(name = "descripcion")
+  @Column(name = "informacion")
   private String informacion;
 
   public int getId() {
