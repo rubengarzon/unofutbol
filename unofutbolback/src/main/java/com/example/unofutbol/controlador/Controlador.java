@@ -1,12 +1,11 @@
 package com.example.unofutbol.controlador;
 
 import com.example.unofutbol.modelo.Noticia;
+import com.example.unofutbol.modelo.Partido;
 import com.example.unofutbol.servicio.NoticiaService;
+import com.example.unofutbol.servicio.PartidoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,8 +15,18 @@ import java.util.List;
 public class Controlador {
   @Autowired
   NoticiaService service;
+  @Autowired
+  PartidoService servicePartido;
   @GetMapping("/noticias")
   public List<Noticia> listar(){
     return service.listar();
+  }
+  @GetMapping("/noticias/{id}")
+  public Noticia buscarPorId(@PathVariable("id")int id){
+    return service.buscarPorId(id);
+  }
+  @GetMapping("/partidos")
+  public List<Partido> listarPartidos(){
+    return servicePartido.listarPartidos();
   }
 }

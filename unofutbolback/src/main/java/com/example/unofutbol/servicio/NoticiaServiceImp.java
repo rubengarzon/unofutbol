@@ -18,5 +18,11 @@ public class NoticiaServiceImp implements NoticiaService {
     return repositorio.findAll();
   }
 
+  @Override
+  @Transactional(readOnly = true)
+  public Noticia buscarPorId(int id) {
+    return repositorio.findById(id);
+  }
+
 }
 

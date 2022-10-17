@@ -3,48 +3,24 @@
   <div class="card mb-3" style="max-width: 1296px;" style="background-color: black; border: 1px solid white">
     <div class="row g-0">
       <div class="col-md-8">
-        <img
-          src="https://image-service.onefootball.com/transform?w=840&h=472&dpr=2&image=https%3A%2F%2Fwww.fcbarcelonanoticias.com%2Fuploads%2Fs1%2F12%2F99%2F82%2F2%2Fky-mbappe-prensa.jpeg"
-          class="img-fluid rounded-start" alt="...">
+        <img [src]=mainNews?.imagen class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-md-3">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-            content.
-            This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <h5 class="card-title">{{mainNews?.titulo}}</h5>
+          <p class="card-text">{{mainNews?.informacion}}</p>
+          <p class="card-text"><small class="text-muted">{{mainNews?.fecha}}</small></p>
         </div>
       </div>
     </div>
   </div>
 </div>
 <div style="display: flex;place-content: center;">
-  <div class="card" style="width: 18rem; background-color: black">
-    <img
-      src="https://image-service.onefootball.com/transform?w=290&h=193&dpr=2&image=https%3A%2F%2Fmdfutbol.com%2Fwp-content%2Fuploads%2F2022%2F10%2FCopia-de-PREMIER-1-1.png"
-      class="card-img-top" alt="...">
+  <div class="card" *ngFor="let new of news" style="width: 18rem; background-color: black">
+    <img [src]=new?.imagen class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem; background-color: black; margin-left: 30px">
-    <img
-      src="https://image-service.onefootball.com/transform?w=290&h=193&dpr=2&image=https%3A%2F%2Fmdfutbol.com%2Fwp-content%2Fuploads%2F2022%2F10%2FCopia-de-PREMIER-1-1.png"
-      class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem; background-color: black; margin-left: 30px">
-    <img
-      src="https://image-service.onefootball.com/transform?w=290&h=193&dpr=2&image=https%3A%2F%2Fmdfutbol.com%2Fwp-content%2Fuploads%2F2022%2F10%2FCopia-de-PREMIER-1-1.png"
-      class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <h5 class="card-title">{{new?.titulo}}</h5>
+      <p class="card-text"><small class="text-muted">{{new?.fecha}}</small></p>
     </div>
   </div>
 </div>

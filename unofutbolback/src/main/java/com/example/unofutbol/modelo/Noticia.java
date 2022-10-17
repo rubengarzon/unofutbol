@@ -13,7 +13,12 @@ public class Noticia {
   private String titulo;
   @Column(name = "informacion")
   private String informacion;
-
+  @Column(name = "destacado")
+  private Boolean destacado;
+  @Column(name = "imagen")
+  private String imagen;
+  @Column(name = "fecha")
+  private String fecha;
   public int getId() {
     return id;
   }
@@ -36,5 +41,29 @@ public class Noticia {
 
   public void setInformacion(String informacion) {
     this.informacion = informacion;
+  }
+
+  public Boolean getDestacado() {
+    return destacado;
+  }
+
+  public void setDestacado(Boolean destacado) {
+    this.destacado = destacado;
+  }
+
+  public String getImagen() {
+    return imagen;
+  }
+
+  public void setImagen(String imagen) {
+    this.imagen = imagen;
+  }
+
+  public String getFecha() {
+    return fecha;
+  }
+
+  public void setFecha(String fecha) {
+    this.fecha = fecha;
   }
 }

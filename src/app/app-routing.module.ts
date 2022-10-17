@@ -10,6 +10,7 @@ const routes: Routes = [
         (m) => m.HomePageModule
       ),
   },
+  { path: 'partidos', loadChildren: () => import('./pages/matches/matches.module').then(m => m.MatchesModule) },
   { path: '**', redirectTo: 'inicio' },
 ];
 

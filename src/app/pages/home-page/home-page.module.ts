@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { HomePageRoutingModule } from './home-page-routing.module';
 import { HomePageComponent } from './home-page.component';
-import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { NewsComponent } from 'src/app/components/news/news.component';
+import { NavbarModule } from '../../components/navbar/navbar.module';
 
 @NgModule({
-  declarations: [HomePageComponent, NavbarComponent, NewsComponent],
-  imports: [CommonModule, HomePageRoutingModule],
+  declarations: [HomePageComponent, NewsComponent],
+  imports: [CommonModule, HomePageRoutingModule, NavbarModule],
 })
 export class HomePageModule {}

@@ -1,11 +1,11 @@
 package com.example.unofutbol.repositorio;
 
 import com.example.unofutbol.modelo.Noticia;
+import com.example.unofutbol.modelo.Partido;
 import org.springframework.data.repository.Repository;
 
 import java.util.List;
 
-public interface NoticiaRepositorio extends Repository<Noticia, Integer> {
-  List<Noticia> findAll();
-  Noticia findById(int id);
+public interface PartidoRepositorio extends Repository<Partido, Integer> {
+  List<Partido> findAll();
 }
