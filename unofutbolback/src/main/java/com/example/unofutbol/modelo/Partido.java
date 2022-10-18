@@ -11,6 +11,8 @@ public class Partido {
   private int id;
   @Column(name = "liga")
   private String liga;
+  @Column(name = "liga_img")
+  private String liga_img;
   @Column(name = "jornada")
   private int jornada;
   @Column(name = "equipo_local")
@@ -38,6 +40,14 @@ public class Partido {
 
   public void setLiga(String liga) {
     this.liga = liga;
+  }
+
+  public String getLiga_img() {
+    return liga_img;
+  }
+
+  public void setLiga_img(String liga_img) {
+    this.liga_img = liga_img;
   }
 
   public int getJornada() {

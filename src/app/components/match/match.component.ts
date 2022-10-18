@@ -29,7 +29,7 @@ export class MatchComponent implements OnInit {
   getMatches(): void {
     this.service.getMatches().subscribe((data: Partido[]) => {
       this.partidos = data;
-      console.log(data[0].hora);
+      console.log(data[0].liga_img);
     });
   }
 }

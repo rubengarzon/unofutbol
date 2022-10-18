@@ -4,9 +4,7 @@
 </div>
 <div *ngFor="let partido of partidos" class="jornada">
   <div class="jornada-content">
-    <img
-      src="https://oneftbl-cms.imgix.net/https%3A%2F%2Fimages.onefootball.com%2Ficons%2FleagueColoredCompetition%2F128%2F13.png?auto=format%2Ccompress&crop=faces&dpr=2&fit=crop&h=50&q=25&w=50&s=9694c4095e35dca907c544817a86c64a"
-      alt="" width="60" height="60">
+    <img [src]=partido.liga_img alt="" width="60" height="60">
     <div class="jornada-liga">
       <h5>{{partido.liga}}</h5>
       <span>Jornada {{partido.jornada}}</span>
