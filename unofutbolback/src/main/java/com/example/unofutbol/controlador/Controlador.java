@@ -29,4 +29,8 @@ public class Controlador {
   public List<Partido> listarPartidos(){
     return servicePartido.listarPartidos();
   }
+  @GetMapping("/partidos/liga/{liga}")
+  public List<Partido> listarPartidosPorLiga(@PathVariable("liga")String liga){
+    return servicePartido.listarPartidosPorLiga(liga);
+  }
 }

@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface PartidoService {
   List<Partido> listarPartidos();
+  List<Partido> listarPartidosPorLiga(String liga);
 }

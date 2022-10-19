@@ -2,14 +2,14 @@
   <h5>Partidos de hoy</h5>
   <span class="fecha-actual">{{fechaActualString}}</span>
 </div>
-<div *ngFor="let partido of partidos" class="jornada">
-  <div class="jornada-content">
-    <img [src]=partido.liga_img alt="" width="60" height="60">
-    <div class="jornada-liga">
-      <h5>{{partido.liga}}</h5>
-      <span>Jornada {{partido.jornada}}</span>
-    </div>
+<div class="jornada-content">
+  <img [src]="imgLaLiga" alt="" width="60" height="60">
+  <div class="jornada-liga">
+    <h5>LaLiga</h5>
+    <span>Jornada {{jornadaLaLiga}}</span>
   </div>
+</div>
+<div *ngFor="let partido of partidosLaLiga" class="jornada">
   <div class="card">
     <div class="card-content">
       <div class="card-content-teams">
@@ -27,3 +27,30 @@
       </div>
     </div>
   </div>
+</div>
+<div class="jornada-content">
+  <img [src]="imgPremier" alt="" width="60" height="60">
+  <div class="jornada-liga">
+    <h5>Premier League</h5>
+    <span>Jornada {{jornadaPremier}}</span>
+  </div>
+</div>
+<div *ngFor="let partido of partidosPremier" class="jornada">
+  <div class="card">
+    <div class="card-content">
+      <div class="card-content-teams">
+        <div class="card-content-team">
+          <img [src]=partido.equipo_local_img alt="" width="19" height="19">
+          <span style="margin-left: 10px">{{partido.equipo_local}}</span>
+        </div>
+        <div class="card-content-team">
+          <img [src]=partido.equipo_visitante_img alt="" width="19" height="19">
+          <span style="margin-left: 10px">{{partido.equipo_visitante}}</span>
+        </div>
+      </div>
+      <div class="card-content-hour">
+        <span>{{partido.hora}}</span>
+      </div>
+    </div>
+  </div>
+</div>

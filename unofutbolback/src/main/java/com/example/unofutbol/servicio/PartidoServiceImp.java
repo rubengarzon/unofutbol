@@ -19,4 +19,10 @@ public class PartidoServiceImp implements PartidoService {
   public List<Partido> listarPartidos() {
     return partidoRepositorio.findAll();
   }
+
+  @Override
+  @Transactional(readOnly = true)
+  public List<Partido> listarPartidosPorLiga(String liga) {
+    return partidoRepositorio.findByLiga(liga);
+  }
 }

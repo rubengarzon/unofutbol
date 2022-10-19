@@ -9,7 +9,12 @@ import { Partido } from '../../interface/Partido';
 })
 export class MatchComponent implements OnInit {
   fechaActualString: string = '';
-  partidos: Partido[] = [];
+  partidosLaLiga: Partido[] = [];
+  partidosPremier: Partido[] = [];
+  jornadaLaLiga: number = 0;
+  imgLaLiga: string = '';
+  jornadaPremier: number = 0;
+  imgPremier: string = '';
 
   constructor(private service: MatchesService) {}
 
@@ -21,15 +26,24 @@ export class MatchComponent implements OnInit {
       month: 'long',
       day: 'numeric',
     });
-    this.getMatches();
+    this.getMatchesByLiga('laliga');
+    this.getMatchesByLiga('Premier League');
   }
   /**
-   * Get matches from the service
+   * @description Obtiene los partidos de la liga seleccionada
+   * @param liga - liga a la que se le quieren obtener los partidos
    */
-  getMatches(): void {
-    this.service.getMatches().subscribe((data: Partido[]) => {
-      this.partidos = data;
-      console.log(data[0].liga_img);
+  getMatchesByLiga(liga: string): void {
+    this.service.getMatchesByLiga(liga).subscribe((data: Partido[]) => {
+      if (liga === 'laliga') {
+        this.partidosLaLiga = data;
+        this.jornadaLaLiga = data[0].jornada;
+        this.imgLaLiga = data[0].liga_img;
+      } else {
+        this.partidosPremier = data;
+        this.jornadaPremier = data[0].jornada;
+        this.imgPremier = data[0].liga_img;
+      }
     });
   }
 }

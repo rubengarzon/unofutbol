@@ -8,4 +8,9 @@ import java.util.List;
 
 public interface PartidoRepositorio extends Repository<Partido, Integer> {
   List<Partido> findAll();
+  List<Partido> findByLiga(String liga);
+
+
+
+
 }
