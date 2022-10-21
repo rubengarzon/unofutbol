@@ -1,7 +1,9 @@
 package com.example.unofutbol.controlador;
 
+import com.example.unofutbol.modelo.Clasificacion;
 import com.example.unofutbol.modelo.Noticia;
 import com.example.unofutbol.modelo.Partido;
+import com.example.unofutbol.servicio.ClasificacionService;
 import com.example.unofutbol.servicio.NoticiaService;
 import com.example.unofutbol.servicio.PartidoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,8 @@ public class Controlador {
   NoticiaService service;
   @Autowired
   PartidoService servicePartido;
+  @Autowired
+  ClasificacionService serviceClasificacion;
   @GetMapping("/noticias")
   public List<Noticia> listar(){
     return service.listar();
@@ -32,5 +36,9 @@ public class Controlador {
   @GetMapping("/partidos/liga/{liga}")
   public List<Partido> listarPartidosPorLiga(@PathVariable("liga")String liga){
     return servicePartido.listarPartidosPorLiga(liga);
+  }
+  @GetMapping("/clasificacion")
+  public List<Clasificacion> listarClasificacion(){
+    return serviceClasificacion.listar();
   }
 }

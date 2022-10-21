@@ -10,7 +10,17 @@ const routes: Routes = [
         (m) => m.HomePageModule
       ),
   },
-  { path: 'partidos', loadChildren: () => import('./pages/matches/matches.module').then(m => m.MatchesModule) },
+  {
+    path: 'partidos',
+    loadChildren: () =>
+      import('./pages/matches/matches.module').then((m) => m.MatchesModule),
+  },
+  {
+    path: 'clasificacion/:liga',
+    loadChildren: () =>
+      import('./pages/tables/tables.module').then((m) => m.TablesModule),
+  },
+  { path: 'table', loadChildren: () => import('./components/table/table.module').then(m => m.TableModule) },
   { path: '**', redirectTo: 'inicio' },
 ];
 

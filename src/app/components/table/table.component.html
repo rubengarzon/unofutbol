@@ -1,0 +1,37 @@
+<div class="competicion">
+  <div class="competicion-border">
+    <img
+      src="https://image-service.onefootball.com/transform?w=82&h=82&dpr=2&image=https%253A%252F%252Fimages.onefootball.com%252Ficons%252FleagueColoredCompetition%252F128%252F10.png"
+      width="60">
+  </div>
+  <div class="competicion-liga">
+    <span>COMPETICIÓN</span>
+    <span class="laliga">LALIGA</span>
+  </div>
+</div>
+<h5>Clasificación</h5>
+<table class="table table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">PJ</th>
+      <th scope="col">G</th>
+      <th scope="col">E</th>
+      <th scope="col">P</th>
+      <th scope="col">DG</th>
+      <th scope="col">PTS</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let equipo of clasificacion">
+    <tr>
+      <th scope="row">{{equipo.posicion}}<img [src]=equipo.equipo_img width="20"
+          style="margin-right: 10px;margin-left: 10px">{{equipo.equipo}}</th>
+      <td>{{equipo.pj}}</td>
+      <td>{{equipo.g}}</td>
+      <td>{{equipo.e}}</td>
+      <td>{{equipo.p}}</td>
+      <td>{{equipo.dg}}</td>
+      <td>{{equipo.pts}}</td>
+    </tr>
+  </tbody>
+</table>

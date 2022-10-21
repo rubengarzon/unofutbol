@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MatchesService } from 'src/app/services/matches.service';
 import { Partido } from '../../interface/Partido';
 
@@ -16,7 +17,7 @@ export class MatchComponent implements OnInit {
   jornadaPremier: number = 0;
   imgPremier: string = '';
 
-  constructor(private service: MatchesService) {}
+  constructor(private service: MatchesService, private router: Router) {}
 
   ngOnInit(): void {
     let fechaActual = new Date();
@@ -30,8 +31,8 @@ export class MatchComponent implements OnInit {
     this.getMatchesByLiga('Premier League');
   }
   /**
-   * @description Obtiene los partidos de la liga seleccionada
-   * @param liga - liga a la que se le quieren obtener los partidos
+   * @description get matches by league
+   * @param liga string
    */
   getMatchesByLiga(liga: string): void {
     this.service.getMatchesByLiga(liga).subscribe((data: Partido[]) => {
@@ -45,5 +46,9 @@ export class MatchComponent implements OnInit {
         this.imgPremier = data[0].liga_img;
       }
     });
+  }
+
+  navigateToTables(liga: string): void {
+    this.router.navigate(['/clasificacion', liga]);
   }
 }
